@@ -18,6 +18,8 @@
     <style>
         * body {
             background: royalblue;
+            box-sizing: border-box;
+            /* font-size: 10px;*/
         }
         /*  * {
             margin: 0;
@@ -25,10 +27,10 @@
             box-sizing: border-box;
         }
         */
-        
-        body {
+        /*  body {
             font-size: 16px;
         }
+        */
         
         table,
         th,
@@ -70,16 +72,15 @@
          Combined Selectors
 
         */
-        
-        * {
-            /*   background-color: royalblue; */
-            /*background-color: #ff0000;*/
-            /*background-color: rgba(255, 0, 0, 1); */
-        }
-        
-        .margin--100 {
+        /* * {
+             background-color: royalblue; 
+            background-color: #ff0000;
+            background-color: rgba(255, 0, 0, 1); 
+         }*/
+        /*  .margin--100 {
             margin: 100px;
         }
+        */
         
         #gorkha {
             margin: 100px;
@@ -103,14 +104,130 @@
         p {
             background-color: yellow;
         }
-        
+        /*  
         .numbers {
             background-color: aqua;
         }
+        */
         
         #three {
             background-color: black !important;
         }
+        
+        .numericals {
+            background-color: red;
+        }
+        
+        .numbers {
+            background-color: coral;
+        }
+        
+        [data-num="1"] {
+            color: blue;
+        }
+        
+        .box {
+            height: 200px;
+            /*  width: 100vw;
+ */
+            max-width: 100vw;
+            background-color: yellowgreen;
+        }
+        /* ul {
+            color: blue;
+        } */
+        
+        li#one:first-child {
+            color: aqua;
+        }
+        
+        li:nth-child(2) {
+            color: red;
+        }
+        
+        li:hover {
+            color: black;
+        }
+        
+        input:focus {
+            color: red;
+            background-color: aqua;
+        }
+        /* :required
+         :invalid{
+            background-color: red;
+         } */
+        
+        .required-field::after {
+            content: "*";
+            color: red;
+        }
+        /* relative measurement units
+        %
+        rem
+        em
+        vh
+        vw
+         */
+        /*  body {
+            font-size: 10px;
+        } */
+        /* 
+        .container {
+            font-size: 20px;
+        }
+        
+        .box-container {
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        }
+        
+        .box-children {
+            height: 5em;
+            width: 5rem;
+            background-color: black;
+        }
+        
+        .em {
+            font-size: 1em;
+        }
+        
+        .rem {
+            font-size: 1rem;
+        } */
+        
+        .parent {
+            height: 300vh;
+            width: 50vw;
+            background-color: cadetblue;
+        }
+        
+        .children {
+            padding: 50px;
+        }
+        
+        .child1 {
+            background-color: blue;
+            position: static;
+        }
+        
+        .child2 {
+            background-color: burlywood;
+            position: relative;
+        }
+        
+        .child3 {
+            background-color: crimson;
+            position: absolute;
+        }
+        /* 
+        posotion
+        -static
+        -relative
+        -fixed
+        -absolute
+        -sticky */
     </style>
 
 
@@ -120,51 +237,99 @@
 <a href="http://google.com/" target="_blank">E-Commerce </a>
 
 <body>
-    <P>One</P>
-    <P class="numbers" id="two">Two</P>
-    <P id="three">Three</P>
-    <P>Four</P>
-
     <div class="parent">
+        <div class="children child1">
+            Child1
+        </div>
+        <div class="children child2">Child2</div>
+        <div class="children child3">Child3</div>
 
-        <p>WELCOME</p>
-        <div>
-            <p id="gorkha" class="margin--100">Welcome Gorkha</p>
+    </div>
+
+
+
+    <!--  <div class="box-container">
+        <div class="box-children">
         </div>
     </div>
-    <form onsubmit="handleSubmit(event)">
-        <div>
-            <label for="username">username
+    <div class="container">
+        <p class="em">1em</p>
+        <p class="rem">1rem</p>
+
+    </div>
+
+
+
+ -->
+
+    <div>
+        <!--    <label for="price" class="required-field">Price <span style =" color: red ">*</span></label>-->
+        <label for="price" class="required-field">Price </label>
+        <label for="user" class="required-field">user </label>
+
+        <input id="price " type="number " />
+    </div>
+
+    <ul>
+        <li id="one ">one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    <div class="box ">
+
+    </div>
+    <div class="numericals ">
+        <P class="numbers " data-num="1 ">One</P>
+        <P class="numbers " data-num="2 " id="two ">Two</P>
+        <P id="three ">Three</P>
+        <P>Four</P>
+
+        <div class="parent ">
+
+            <p>WELCOME</p>
+            <div>
+                <p id="gorkha " class="margin--100 ">Welcome Gorkha</p>
+            </div>
+        </div>
+        <form onsubmit="handleSubmit(event) ">
+            <div>
+                <label for="username ">username
         
             </label>
-            <input type="text" id="username" name="username" placeholder="username" autofocus/>
+                <input type="text " id="username " name="username " placeholder="username " autofocus/>
 
 
-        </div>
-        <div>
-            <label> Gorkha</label>
-            <input type="radio" id="Gorkha" />
-        </div>
-        <div>
-            <label> Kathmandu</label>
-            <input type="checkbox" id="Kathmandu" />
-        </div>
+            </div>
+            <div>
+                <label> Gorkha</label>
+                <input type="radio " id="Gorkha " />
+            </div>
+            <div>
+                <label> Kathmandu</label>
+                <input type="checkbox " id="Kathmandu " />
+            </div>
 
-        <input type="file" multiple accept="image/*" />
-        <input type="text" placeholder="username" autofocus/>
-        <input type="password" name="password" placeholder="password" autofocus/>
+            <input type="file " multiple accept="image/* " />
+            <input type="text " placeholder="username " />
+            <input type="password " name="password " placeholder="password " autofocus/>
 
-        <input type="email" placeholder="xyz@gmail.com" autofocus/>
+            <input type="email " placeholder="xyz@gmail.com " />
 
-        <textarea width="100%" rows="8" placeholder="description">
+            <textarea width="100% " rows="8 " placeholder="description ">
 
         </textarea>
 
 
 
-        <button type="button"> 2nd button</button>
-        <input type="submit" value="submit" />
-        <input type="button" value="button" onclick="buttonClick()">
+            <button type="button "> 2nd button</button>
+            <input type="submit " value="submit " />
+            <input type="button " value="button " onclick="buttonClick() ">
+    </div>
 
     </form>
     <h1>
@@ -185,7 +350,7 @@
         </thead>
         <tbody>
             <tr>
-                <td colspan="2">Mobile</td>
+                <td colspan="2 ">Mobile</td>
                 <td>100</td>
             </tr>
             <tr>
@@ -216,24 +381,24 @@
     </ol>
 
 
-    <!----  <script src="async-awaits.js">
+    <!----  <script src="async-awaits.js ">
         </script> -->
-    <a href="http://google.com/" target="blank"> Google</a>
-    <a href="#Contact">Contact</a>
+    <a href="http://google.com/ " target="blank "> Google</a>
+    <a href="#Contact ">Contact</a>
     <script>
         function handleSubmit(event) {
             event.preventDefault();
-            console.log("form submitted");
+            console.log("form submitted ");
             console.log({
                 event
             });
-            console.log("target", event.target.username.value)
+            console.log("target ", event.target.username.value)
                 //access elements value
                 //api call
         }
 
         function buttonClick() {
-            console.log("button click");
+            console.log("button click ");
         }
     </script>
 

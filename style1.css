@@ -1,0 +1,115 @@
+/* variables */
+
+:root {
+    --primary-color: gray;
+    --secondary-color: transparent;
+    --color: white;
+}
+
+
+/* reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--color);
+}
+
+
+/* css */
+
+
+/* head */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section {
+    margin-top: 2em;
+}
+
+
+/* 2@font-face{  ==> For downloaded file of font
+    font-family: custom;
+    src:url("./custom.ttf";
+ } */
+
+.projects div {
+    background-color: rgb(174, 233, 120);
+    margin: 1em;
+    padding: 1.5em;
+    text-align: center;
+    font-family: 'BhuTuka Expanded One', cursive;
+    /* font-family:custom ;*/
+}
+
+
+/* header */
+
+.projects img {
+    height: 200px;
+    width: 200px;
+}
+
+
+/* media queries */
+
+
+/* mobile first */
+
+@media (min-width:768px) {
+    /* body {
+        display: none;
+    } */
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .projects div {
+        width: 30vw;
+    }
+}
+
+@media(min-width:992px) {
+    body {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* desktop first approach */
+
+@media(max-width:768px) {
+    /*  body {
+        display: none;
+    } */
+}
+
+
+/* @media print{
+
+} */
