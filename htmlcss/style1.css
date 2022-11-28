@@ -1,9 +1,9 @@
 /* variables */
 
 :root {
-    --primary-color: gray;
+    --primary-color: rgb(218, 245, 209);
     --secondary-color: transparent;
-    --color: white;
+    --color: rgb(5, 5, 5);
 }
 
 
@@ -51,18 +51,20 @@ section {
 }
 
 
-/* 2@font-face{  ==> For downloaded file of font
+/* @font-face{  ==> For downloaded file of font
     font-family: custom;
     src:url("./custom.ttf";
  } */
 
 .projects div {
-    background-color: rgb(174, 233, 120);
+    background-color: rgb(93, 190, 3);
     margin: 1em;
     padding: 1.5em;
     text-align: center;
     font-family: 'BhuTuka Expanded One', cursive;
     /* font-family:custom ;*/
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
 
