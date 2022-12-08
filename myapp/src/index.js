@@ -6,12 +6,14 @@ import CustomApp, { BigButton } from './App';
 //const app = require("app")
 import reportWebVitals from './reportWebVitals';
 
+import store from './redux/store';
+import { Provider } from 'react-redux';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
-<React.StrictMode >
+<Provider store={store}>
     <CustomApp />
-    <BigButton />
-    </React.StrictMode>
+</Provider>
 ); 
 
 // If you want to start measuring performance in your app, pass a function

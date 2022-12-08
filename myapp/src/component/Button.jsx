@@ -1,4 +1,5 @@
 import { useState, useEffect  } from "react";
+import Text from "./Text";
 //useCallback, useMemo,useReducer,useRef, useId
 
 export default function Button(props){
@@ -13,8 +14,12 @@ useEffect(()=>{
   return ()=> {
     console.log("use-effect-cleanup");
   };
-});
+},[]);
 
+useEffect(()=>{
+  console.log("use-effect => change in state");
+  
+},[count,state]);
 
 
 //function checkWeather()
@@ -67,7 +72,16 @@ function handleChange()
   name ="Changed"
 }
 
-    return(
+console.log(props.title);
+//<button>
+//</button>
+return(   
+ <Text setState = {setState} title = {props.title} />
+ 
+)
+
+
+  return(
         <>
 {/*         <p>a : {a} </p>
  */}        {/* {state}
@@ -81,8 +95,7 @@ function handleChange()
  */} 
  <h1>{name}</h1>
 
-  <input value ={state} onChange = {function (){ setState("new value")}} /> 
-       
+  <input value ={state} onChange = {function (){ setState("new value")}} />       
   <input  value={state} onChange = {()=> handleChange()} />        
  
        

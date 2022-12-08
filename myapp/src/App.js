@@ -11,8 +11,11 @@ import {
     Route,
     Link,
 }from "react-router-dom";
+import ProtectedRoute from './component/ProtectedRoute';
 
 function App() {
+
+    const [state, setstate] = useState("initialState");
     /* const [toggle_status, setToggle] = useState(false);
 
     let a =1;
@@ -34,24 +37,23 @@ function App() {
         <li><Link to ="class-button">classbutton</Link>  </li>
        </ul>
        <Routes>
-       <Route path ="/">   
-{/*        <Route path ="/" element={<h1>APP/Page</h1>}>*/}
+       <Route path ="/"> 
           <Route index element ={<h1>Home</h1>} /> 
-          <Route path= "class-button" element ={<ButtonClass/>}/>
-
-           <Route path ="button" element={<Button/>}>
-           </Route>
-           <Route path ="teams" > 
+          <Route path ="teams" element ={<ProtectedRoute/>}>       
            <Route index element ={<h1>Teams</h1>} /> 
-             <Route path ="button" element ={<Button/>}> 
+           <Route path =":code" element = {<h1>Team Code</h1>}> 
+           <Route path ="button" element ={<Button />}>
+                </Route>
+            </Route>           
+            <Route path= "class-button" element ={<ButtonClass/>}/>
+             <Route path ="button" element ={<Button setState ={setstate} title ={state} />}> 
          </Route>
         </Route>
-      </Route> 
-   
+        </Route>   
   </Routes>
 </BrowserRouter>
  
- 
+ {/* :code => <slug> key words */}
  
      {/* <Button
      type="small"
